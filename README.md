@@ -9,7 +9,7 @@ Este site é um projeto **independente** realizado por um grupo de alunos do cur
 ## Estrutura do Projeto
 
 ```
-site-ong
+Familia-Azul-main
 ├── src
 │   ├── css
 │   │   └── style.css          # Estilos CSS personalizados
@@ -24,12 +24,12 @@ site-ong
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/yMayaVitoria/Familia-Azul
+   git clone https://github.com/CristianoRoa/Familia-Azul-main
    ```
 
 2. **Navegue até o diretório do projeto:**
    ```bash
-   cd site-ong
+   cd Familia-Azul-main
    ```
 
 3. **Abra o arquivo `index.html` em seu navegador** para visualizar o site.
