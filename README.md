@@ -10,26 +10,26 @@ Este site é um projeto **independente** realizado por um grupo de alunos do cur
 
 ```
 Familia-Azul-main
+├── index.html                  # Página principal do site (na raiz do repositório)
 ├── src
 │   ├── css
-│   │   └── style.css          # Estilos CSS personalizados
-│   ├── images                 # Imagens utilizadas no site
-│   ├── js
-│   │   └── main.js            # Funcionalidades interativas em JavaScript
-│   └── index.html             # Página principal do site
-├── README.md                  # Documentação do projeto
+│   │   └── style.css           # Estilos CSS personalizados
+│   ├── images                  # Imagens utilizadas no site
+│   └── js
+│       └── main.js             # Funcionalidades interativas em JavaScript
+├── README.md                   # Documentação do projeto
 ```
 
 ## Como Executar
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/CristianoRoa/Familia-Azul-main
+   git clone https://github.com/yMayaVitoria/Familia-Azul
    ```
 
 2. **Navegue até o diretório do projeto:**
    ```bash
-   cd Familia-Azul-main
+   cd site-ong
    ```
 
 3. **Abra o arquivo `index.html` em seu navegador** para visualizar o site.

@@ -7,7 +7,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
-  <link rel="stylesheet" href="src/css/style.css" />
+  <link rel="stylesheet" href="src/css/index.css" />
   <script>
     if (/android/i.test(navigator.userAgent)) {
       document.documentElement.classList.add('android');
@@ -17,22 +17,25 @@
 <body class="bg-white">
   <header class="bg-gradient-to-r from-yellow-300 via-yellow-400 to-blue-200 p-4 flex justify-between items-center shadow-lg sticky top-0 z-40">
     <div class="flex items-center gap-4">
-      <img 
-        src="src/images/Logo family.png" 
-        alt="Logo da Associação Família Azul de Conceição do Coité" 
-        class="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover"
-        loading="lazy"
-      />
+      <a href="index.html">
+        <img 
+          src="src/images/Logo family.png" 
+          alt="Logo da Associação Família Azul de Conceição do Coité" 
+          class="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover"
+          loading="lazy"
+          style="cursor:pointer"
+        />
+      </a>
       <h1 class="text-lg md:text-2xl font-bold leading-tight text-center md:text-left text-blue-900 drop-shadow">
         Associação Família Azul de Conceição do Coité
       </h1>
     </div>
     <nav class="hidden md:flex space-x-4" aria-label="Menu principal" id="menu-desktop">
-      <a class="flex items-center gap-2 text-black hover:text-blue-900 font-semibold transition-colors nav-underline" href="#">
+      <a class="flex items-center gap-2 text-black hover:text-blue-900 font-semibold transition-colors nav-underline" href="index.html">
         <i class="fas fa-home"></i>
         Início
       </a>
-      <a class="flex items-center gap-2 text-black hover:text-blue-900 font-semibold transition-colors nav-underline" href="#">
+      <a class="flex items-center gap-2 text-black hover:text-blue-900 font-semibold transition-colors nav-underline" href="src/sobre.html">
         <i class="fas fa-info-circle"></i>
         Sobre
       </a>
@@ -47,11 +50,11 @@
         <i class="fas fa-bars text-2xl transition-transform duration-300" id="menu-icon"></i>
       </button>
       <div id="menu-mobile" class="hidden absolute right-0 mt-2 bg-white rounded-xl shadow-2xl flex flex-col w-48 z-50 opacity-0 scale-95 transition-all duration-300 origin-top-right">
-        <a class="flex items-center gap-2 p-4 text-black border-b hover:bg-blue-100 transition nav-underline" href="#">
+        <a class="flex items-center gap-2 p-4 text-black border-b hover:bg-blue-100 transition nav-underline" href="index.html">
           <i class="fas fa-home"></i>
           Início
         </a>
-        <a class="flex items-center gap-2 p-4 text-black border-b hover:bg-blue-100 transition nav-underline" href="#">
+        <a class="flex items-center gap-2 p-4 text-black border-b hover:bg-blue-100 transition nav-underline" href="src/sobre.html">
           <i class="fas fa-info-circle"></i>
           Sobre
         </a>
@@ -67,11 +70,10 @@
     <section class="bg-blue-100 p-8">
       <h2 class="text-4xl font-bold text-blue-900">Família Azul</h2>
       <p class="text-lg text-blue-900">Juntos pelo respeito, inclusão e amor</p>
-      <a href="https://www.vakinha.com.br/?utm_source=google&utm_medium=cpc&utm_campaign=Vakinha_google_conversao_search_fundo_11_always-on_institucional_home-cpc&utm_content=120558729261&utm_term=vakinha&gad_source=1&gbraid=0AAAAADoIfp0_oovYKzE6QUF543_4zmlcT&gclid=Cj0KCQjwiLLABhCEARIsAJYS6umQPu-6pXmUbWiH-zYOhc4q47l7FgJxoffrboUG557mdtgmgbFSke4aAqnqEALw_wcB" 
-         class="doe-agora-btn inline-block mt-4 text-white rounded-full text-lg font-bold uppercase tracking-wide focus:outline-none focus:ring-4 focus:ring-red-300"
-         role="button">
+      <a href="doe.html" class="doe-agora-btn inline-block mt-4 bg-red-600 hover:bg-red-700 text-white py-3 px-6 rounded-full text-lg font-bold uppercase tracking-wide transition duration-300">
         Doe Agora
       </a>
+      
     </section>
 
     <section class="bg-blue-200 p-8 shadow-md rounded-xl my-8" aria-label="Áreas de atuação">
@@ -140,7 +142,7 @@
           <p class="text-gray-700 text-center mb-4">
             Sugestões de brincadeiras sensoriais, jogos educativos e rotinas que ajudam no desenvolvimento e bem-estar das crianças.
           </p>
-          <a href="https://www.monitorias.com.br/post/desenvolvimento-infantil-6-atividades-para-criancas-autistas-que-voce-precisa-conhecer" class="text-blue-700 font-bold hover:underline" target="_blank">Veja sugestões</a>
+          <a href="https://www.monitorias.com.br/post/desenvolvimento-infantil-6-atividades-para-criancas-autistas-que-voce-precisa-conhecer" target="_blank" rel="noopener" class="text-blue-700 font-bold hover:underline">Veja sugestões</a>
         </article>
         <!-- Artigo 3 -->
         <article class="bg-blue-50 rounded-xl shadow-md p-6 flex flex-col items-center dicas-card opacity-0 translate-y-8 transition-all duration-700">
@@ -149,7 +151,7 @@
           <p class="text-gray-700 text-center mb-4">
             Indicações de livros, filmes e animações que abordam o autismo e promovem a empatia e a compreensão.
           </p>
-          <a href="https://www.institutoser.com.br/o-autismo-em-series-filmes-e-livros-para-conhecer-aprender-e-incluir/" class="text-blue-700 font-bold hover:underline" target="_blank">Confira a lista</a>
+          <a href="https://www.institutoser.com.br/o-autismo-em-series-filmes-e-livros-para-conhecer-aprender-e-incluir/" target="_blank" rel="noopener" class="text-blue-700 font-bold hover:underline">Confira a lista</a>
         </article>
       </div>
       <!-- Divisor ondulado inferior -->
@@ -214,6 +216,17 @@
       </div>
     </section>
 
+    <!-- Quiz Interativo -->
+    <section class="max-w-2xl mx-auto my-16 px-4">
+      <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-8 text-center">Quiz: O que você sabe sobre Autismo?</h2>
+      <div id="quiz" class="bg-white rounded-xl shadow-lg p-8 space-y-6">
+        <div id="quiz-question" class="text-lg font-semibold text-blue-900"></div>
+        <div id="quiz-options" class="flex flex-col space-y-3"></div>
+        <button id="quiz-next" class="mt-4 px-6 py-2 bg-blue-700 text-white rounded-full font-bold hover:bg-blue-900 transition hidden">Próxima</button>
+        <div id="quiz-result" class="mt-6 text-xl font-bold text-green-700 text-center"></div>
+      </div>
+    </section>
+
     <section class="max-w-5xl mx-auto my-16 px-4">
       <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-8 text-center">Galeria de Fotos e Vídeos</h2>
       <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
@@ -234,44 +247,59 @@
     <script async src="//www.instagram.com/embed.js"></script>
   </main>
 
-  <!-- Botão flutuante de acessibilidade -->
+  <!-- Botão flutuante de acessibilidade e modo escuro -->
   <div id="acessibilidade-btn" class="fixed bottom-6 right-6 z-50 flex flex-col-reverse items-end space-y-reverse space-y-2">
-    <button id="btn-acessibilidade-toggle" class="bg-blue-700 text-white rounded-full p-4 shadow-lg hover:bg-blue-900 transition focus:outline-none" title="Acessibilidade" aria-label="Abrir opções de acessibilidade">
-      <i class="fas fa-universal-access text-2xl"></i>
+    <button id="btn-darkmode" class="bg-gray-800 text-white rounded-full p-3 shadow-lg hover:bg-gray-900 transition-all duration-300 focus:outline-none mb-2 flex items-center justify-center" title="Ativar/Desativar modo escuro" aria-label="Modo escuro" style="width:44px;height:44px;">
+      <span id="icon-darkmode" class="transition-transform duration-500">
+        <i class="fas fa-moon text-xl"></i>
+      </span>
+    </button>
+    <button id="btn-acessibilidade-toggle" class="bg-blue-700 text-white rounded-full p-3 shadow-lg hover:bg-blue-900 transition-all duration-300 focus:outline-none flex items-center justify-center" title="Acessibilidade" aria-label="Abrir opções de acessibilidade" style="width:44px;height:44px;">
+      <i class="fas fa-universal-access text-xl"></i>
     </button>
     <div id="acessibilidade-opcoes" class="flex flex-col items-end space-y-2 mb-2 bg-white rounded-xl shadow-xl p-4 border border-blue-100 hidden">
-      <button id="btn-contraste" class="bg-blue-700 text-white rounded-full p-3 shadow-lg hover:bg-blue-900 transition" title="Ajuste de contraste">
+      <button id="btn-contraste" class="bg-blue-700 text-white rounded-full p-2.5 shadow-lg hover:bg-blue-900 transition" title="Ajuste de contraste">
         <i class="fas fa-adjust"></i>
       </button>
-      <button id="btn-fonte" class="bg-blue-700 text-white rounded-full p-3 shadow-lg hover:bg-blue-900 transition" title="Aumentar fonte">
+      <button id="btn-fonte" class="bg-blue-700 text-white rounded-full p-2.5 shadow-lg hover:bg-blue-900 transition" title="Aumentar fonte">
         <i class="fas fa-search-plus"></i>
       </button>
-      <button id="btn-leitura" class="bg-blue-700 text-white rounded-full p-3 shadow-lg hover:bg-blue-900 transition" title="Leitura de texto">
+      <button id="btn-leitura" class="bg-blue-700 text-white rounded-full p-2.5 shadow-lg hover:bg-blue-900 transition" title="Leitura de texto">
         <i class="fas fa-volume-up"></i>
       </button>
-      <a href="https://www.vlibras.gov.br/" target="_blank" rel="noopener" class="bg-blue-700 text-white rounded-full p-3 shadow-lg hover:bg-blue-900 transition flex items-center justify-center" title="Página acessível em Libras">
+      <a href="https://www.vlibras.gov.br/" target="_blank" rel="noopener" class="bg-blue-700 text-white rounded-full p-2.5 shadow-lg hover:bg-blue-900 transition flex items-center justify-center" title="Página acessível em Libras">
         <i class="fas fa-sign-language"></i>
       </a>
     </div>
   </div>
 
-  <script src="src/js/main.js"></script>
+  <script src="src/js/index.js"></script>
 
   <footer class="bg-white p-8 text-center border-t border-gray-200 mt-8">
     <div class="flex flex-col md:flex-row justify-between items-center max-w-5xl mx-auto">
       <address class="flex flex-col items-center md:items-start not-italic mb-6 md:mb-0 text-gray-700">
         <div class="flex items-center mb-2">
           <i class="fas fa-phone-alt mr-2 text-blue-900" aria-hidden="true"></i>
-          <a href="tel:+557512345678" class="hover:underline">(75) 1234-5678</a>
+          <a href="tel:+5575981469115" class="hover:underline text-blue-700">(75) 98146-9115</a>
         </div>
+        
         <div class="flex items-center mb-2">
           <i class="fas fa-envelope mr-2 text-blue-900" aria-hidden="true"></i>
           <a href="mailto:contato@familiaazul.org" class="hover:underline">contato@familiaazul.org</a>
         </div>
         <div class="flex items-center">
           <i class="fas fa-map-marker-alt mr-2 text-blue-900" aria-hidden="true"></i>
-          <span>Rua Exemplo, 123, Conceição do Coité</span>
+          <a 
+            href="https://www.google.com/maps?q=Rua+Carlos+Gomes+99,+Centro,+Conceição+do+Coité,+BA"
+            target="_blank"
+            rel="noopener"
+            class="hover:underline text-blue-700"
+          >
+            Rua Carlos Gomes Nº 99 - Centro, Conceição do Coité - BA
+          </a>
         </div>
+        
+        
       </address>
       <div class="flex flex-col items-center">
         <div class="flex flex-row space-x-6 mb-2">
