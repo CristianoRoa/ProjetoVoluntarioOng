@@ -70,9 +70,10 @@
     <section class="bg-blue-100 p-8">
       <h2 class="text-4xl font-bold text-blue-900">Família Azul</h2>
       <p class="text-lg text-blue-900">Juntos pelo respeito, inclusão e amor</p>
-      <a href="doe.html" class="doe-agora-btn inline-block mt-4 bg-red-600 hover:bg-red-700 text-white py-3 px-6 rounded-full text-lg font-bold uppercase tracking-wide transition duration-300">
+      <a href="#" onclick="abrirModalDoacao(event)" class="doe-agora-btn inline-block mt-4 bg-red-600 hover:bg-red-700 text-white py-3 px-6 rounded-full text-lg font-bold uppercase tracking-wide transition duration-300">
         Doe Agora
-      </a>
+      </a> 
+      
       
     </section>
 
@@ -273,6 +274,48 @@
     </div>
   </div>
 
+  <script>
+    function abrirModalDoacao(event) {
+      event.preventDefault();
+  
+      fetch('doe.html')
+        .then(response => response.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          const conteudo = doc.querySelector('body > div'); // só pega o conteúdo principal
+  
+          document.getElementById('modal-content').innerHTML = conteudo.outerHTML;
+          document.getElementById('modal-doacao').classList.remove('hidden');
+  
+          // Reativa a função copiarPix no conteúdo carregado
+          const script = doc.querySelector('script');
+          if (script) {
+            eval(script.innerText);
+          }
+        })
+        .catch(err => {
+          console.error('Erro ao carregar conteúdo do modal:', err);
+        });
+    }
+  
+    function fecharModal() {
+      document.getElementById('modal-doacao').classList.add('hidden');
+      document.getElementById('modal-content').innerHTML = '';
+    }
+  </script>
+  <script>
+    function copiarPix() {
+      const pix = "27.446.631.0001-95";
+      navigator.clipboard.writeText(pix).then(() => {
+        alert("Código Pix copiado com sucesso!");
+      }).catch((err) => {
+        alert("Erro ao copiar Pix: " + err);
+      });
+    }
+  </script>
+  
+  
   <script src="src/js/index.js"></script>
 
   <footer class="bg-white p-8 text-center border-t border-gray-200 mt-8">
@@ -303,13 +346,14 @@
       </address>
       <div class="flex flex-col items-center">
         <div class="flex flex-row space-x-6 mb-2">
-          <a href="#" aria-label="Facebook" target="_blank" rel="noopener" class="social-icon text-blue-700 hover:text-blue-900 transition-transform duration-200 hover:scale-110">
+          <a href="https://www.facebook.com/familiaazuldecoite" aria-label="Facebook" target="_blank" rel="noopener" class="social-icon text-blue-700 hover:text-blue-900 transition-transform duration-200 hover:scale-110">
             <i class="fab fa-facebook fa-2x"></i>
           </a>
-          <a href="#" aria-label="Instagram" target="_blank" rel="noopener" class="social-icon text-pink-600 hover:text-pink-800 transition-transform duration-200 hover:scale-110">
+          <a href="https://www.instagram.com/familiaazuldecoite/" aria-label="Instagram" target="_blank" rel="noopener" class="social-icon text-pink-600 hover:text-pink-800 transition-transform duration-200 hover:scale-110">
             <i class="fab fa-instagram fa-2x"></i>
           </a>
-          <a href="#" aria-label="YouTube" target="_blank" rel="noopener" class="social-icon text-red-600 hover:text-red-800 transition-transform duration-200 hover:scale-110">
+          
+          <a href="https://youtu.be/OvCyEbY7Mog?si=xasOmobOr-0GlhCG" aria-label="YouTube" target="_blank" rel="noopener" class="social-icon text-red-600 hover:text-red-800 transition-transform duration-200 hover:scale-110">
             <i class="fab fa-youtube fa-2x"></i>
           </a>
         </div>
@@ -321,5 +365,35 @@
       Associação sem fins lucrativos. Juntos pela inclusão.
     </p>
   </footer>
+
+  <!-- Modal de Doação -->
+<div id="modal-doacao" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+  <div class="bg-white rounded-2xl p-6 max-w-md w-full relative shadow-2xl border-2 border-yellow-300 animate-scale-in">
+    <button onclick="fecharModal()" class="absolute top-3 right-4 text-blue-900 hover:text-red-600 text-2xl font-bold">&times;</button>
+    <div id="modal-content" class="text-center text-blue-900 font-roboto">
+      <!-- Conteúdo do modal será carregado via JavaScript -->
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes scaleIn {
+    from {
+      transform: scale(0.9);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  .animate-scale-in {
+    animation: scaleIn 0.2s ease-out forwards;
+  }
+</style>
+
+
+
+
 </body>
 </html>
